@@ -13,15 +13,24 @@
 html {
     box-sizing: border-box;  
     font-size: 62.5%;
+    height: 100%;
 }
 *, *:before, *:after {
   box-sizing: inherit;
+}
+
+main {
+    flex: 1;
 }
 
 body {
     background-color: var(--primario);
     font-size: 1.6rem;   /* 1rem = 10px */
     line-height: 1.5;
+    
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 p{
     font-size: 1.8rem;
