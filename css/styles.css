@@ -164,17 +164,18 @@ h3 {
     display: grid;
     grid-template-rows: repeat(2, auto);
 }
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
     .nosotros{
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         column-gap: 2rem;
+        align-items: center;
     }    
 }
 .nosotros__imagen {
     grid-row: 1 / 2;
 }
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
     .nosotros__imagen {
         grid-column: 2 / 3;
     }
