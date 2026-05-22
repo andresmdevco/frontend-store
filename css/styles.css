@@ -1,10 +1,12 @@
 :root {
-    --primario: #9C27B0;
-    --primarioOscuro: #89119D;
-    --secundario: #FFCE00;
-    --secundarioOscuro: rgb(233, 187, 2);
+    --primario: #F4F6FB;
+    --secundario: #4F6BFF;
+    --secundarioClaro: #B1C7FE;
+    --secundarioOscuro: #1E3A8A;
     --blanco: #FFF;
     --negro: #000;
+    --grisTexto: #5B6480;
+    --filtroAzulOscuro: brightness(0) saturate(100%) invert(22%) sepia(61%) saturate(1767%) hue-rotate(217deg) brightness(93%) contrast(95%);
 
     --fuentePrincipal: "Staatliches", sans-serif;
 }
@@ -35,7 +37,7 @@ body {
 p{
     font-size: 1.8rem;
     font-family: Arial, Helvetica, sans-serif;
-    color: var(--blanco);
+    color: var(--negro);
 }
 a{
     text-decoration: none;
@@ -68,35 +70,38 @@ h3 {
 .header {
     display: flex;
     justify-content: center;
-
 }
 .header__logo {
     margin: 3rem 0;
+    width: 25.8rem;
+    height: 9.6rem;
 }
 
 /* Footer */
 .footer {
-    background-color: var(--primarioOscuro);
-    padding: 1rem 0;
-    margin-top: 2rem;
+    background-color: transparent;
+    margin-top: 3rem;
 }
 .footer__texto{
-    font-family: var(--fuentePrincipal);
     text-align: center;
     font-size: 2.2rem;
+    color: var(--grisTexto);
 }
 
 /* Navegación */
 .navegacion {
-    background-color: var(--primarioOscuro);
+    background-color: var(--blanco);
+    
     padding: 1rem 0;
     display: flex;
     justify-content: center;
-    gap: 2rem; /* Separación */
+    gap: 4rem; /* Separación */
+
+    box-shadow: 0 8px 30px rgba(0,0,0,.05);
 }
 .navegacion__enlace {
     font-family: var(--fuentePrincipal);
-    color: var(--blanco);
+    color: var(--grisTexto);
     font-size: 3rem;
 }
 .navegacion__enlace--activo,
@@ -118,8 +123,10 @@ h3 {
 
 /* Productos */
 .producto {
-    background-color: var(--primarioOscuro);
+    background-color: var(--blanco);
     padding: 1rem;
+    border-radius: 1rem;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, .1);
 }
 .producto__nombre {
     font-size: 4rem;
@@ -142,6 +149,7 @@ h3 {
     background-repeat: no-repeat;
     background-size: cover;
     grid-column: 1 / 3;
+    border-radius: 1rem;
 }
 .grafico--camisas {
     grid-row: 2 / 3;
@@ -168,7 +176,7 @@ h3 {
     .nosotros{
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        column-gap: 2rem;
+        column-gap: 4rem;
         align-items: center;
     }    
 }
@@ -195,6 +203,9 @@ h3 {
 .bloque {
     text-align: center;
 }
+.bloque__imagen {
+    filter: var(--filtroAzulOscuro);
+}
 .bloque__titulo {
     margin: 0;
 }
@@ -208,25 +219,32 @@ h3 {
     }
 }
 
+.camisa__imagen {
+    border-radius: 1rem;
+    box-shadow: 0 10px 20px rgba(177, 199, 254, .6);
+}
+
 .formulario {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
 }
 .formulario__campo {
-    border: 1rem solid var(--primarioOscuro);
+    border: 1rem solid var(--secundarioClaro);
     background-color: transparent;
-    color: var(--blanco);
+    color: var(--negro);
     font-size: 2rem;
     font-family: Arial, Helvetica, sans-serif;
     padding: 1rem;
     appearance: none;
+    outline: none;
 }
 .formulario__campo::placeholder{
-    color: var(--blanco);
+    color: var(--negro);
 }
 .formulario__submit {
     background-color: var(--secundario);
+    color: var(--blanco);
     border: none;
     font-size: 2rem;
     font-family: var(--fuentePrincipal);
